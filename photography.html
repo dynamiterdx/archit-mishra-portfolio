@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-palette="pastel">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Photography</title>
+    <meta name="description" content="Photography gallery in a relaxed pastel theme." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="assets/img/favicon.svg" />
+    <script>
+      (function(){
+        try { var s=localStorage.getItem('theme'); if(s) document.documentElement.setAttribute('data-theme', s); } catch(_e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html#home" class="brand" aria-label="Home">
+          <img src="assets/img/logo.svg" alt="Logo" class="logo" />
+          <span class="brand-text">Your Name</span>
+        </a>
+        <nav class="nav">
+          <a href="index.html#home" class="nav-link">Home</a>
+          <a href="datascience.html" class="nav-link">Data Science</a>
+          <a href="photography.html" class="nav-link">Photography</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">◐</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="section hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1>Photography</h1>
+            <p>Relaxed, pastel palette for an easy-on-the-eyes gallery.</p>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="container">
+          <div id="gallery-grid" class="grid gallery-grid" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>© <span id="year"></span> Your Name</span>
+        <div class="socials">
+          <a id="footer-github" href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.16c-3.34.73-4.04-1.61-4.04-1.61-.55-1.41-1.33-1.79-1.33-1.79-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.24 1.83 1.24 1.06 1.81 2.78 1.29 3.46.99.11-.78.41-1.29.74-1.59-2.66-.31-5.46-1.33-5.46-5.9 0-1.3.47-2.36 1.24-3.19-.12-.31-.54-1.56.12-3.25 0 0 1.01-.32 3.3 1.22a11.5 11.5 0 0 1 6 0c2.28-1.54 3.29-1.22 3.29-1.22.66 1.69.24 2.94.12 3.25.77.83 1.23 1.89 1.23 3.19 0 4.58-2.8 5.58-5.47 5.88.42.36.79 1.07.79 2.16v3.2c0 .32.22.69.82.58A12 12 0 0 0 12 .5Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/gallery.js"></script>
+  </body>
+  </html>
+

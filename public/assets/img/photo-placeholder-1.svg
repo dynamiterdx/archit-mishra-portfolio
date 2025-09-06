@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#0f1215"/>
+      <stop offset="1" stop-color="#0b0d10"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#g1)"/>
+  <g opacity="0.12">
+    <defs>
+      <pattern id="grid1" width="28" height="28" patternUnits="userSpaceOnUse">
+        <path d="M28 0H0v28" fill="none" stroke="#ff234a" stroke-width="1"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#grid1)"/>
+  </g>
+  <g fill="#ff4866" opacity="0.25">
+    <circle cx="120" cy="120" r="90"/>
+    <circle cx="500" cy="480" r="110"/>
+  </g>
+  <g fill="#ff758d" opacity="0.25">
+    <rect x="180" y="340" width="260" height="160"/>
+  </g>
+  <text x="50%" y="50%" text-anchor="middle" fill="#ff758d" font-family="Orbitron, monospace" font-size="24">Photo Placeholder</text>
+</svg>
+
