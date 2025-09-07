@@ -37,10 +37,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="relative mx-auto sm:h-[420px] sm:w-[420px] h-80 w-80"
           >
-            {/* Decorative orange semicircle behind the photo */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[115%] h-[62%] rounded-t-[46%] bg-orange-200/60 dark:bg-orange-400/25 blur-md" />
-            <div className="absolute inset-0 rounded-[28px] ring-1 ring-zinc-200/70 dark:ring-white/10" />
-            <div className="absolute inset-0 rounded-[28px] bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-900 dark:to-zinc-800" />
+            {/* Decorative orange semicircle behind the cutout; no box/panel */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[125%] h-[70%] rounded-t-[50%] bg-orange-200/70 dark:bg-orange-300/40 blur-sm" />
 
             {/* User-provided cutout image (PNG/SVG/JPG) */}
             <div className="absolute inset-0 p-4">
@@ -50,7 +48,7 @@ export default function Hero() {
                   alt={(profile as any).alt || "Portrait"}
                   fill
                   priority
-                  className="object-contain drop-shadow-2xl"
+                  className="object-contain drop-shadow-2xl [background:transparent!important]"
                   sizes="(min-width: 1024px) 420px, 320px"
                 />
               </div>
