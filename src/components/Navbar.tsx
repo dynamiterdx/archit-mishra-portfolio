@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -50,6 +51,9 @@ export default function Navbar() {
                   </Link>
                 </li>
               ))}
+              <li className="pl-2 pr-1">
+                <ThemeToggle />
+              </li>
             </div>
           </ul>
         </nav>
