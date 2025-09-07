@@ -1,0 +1,1 @@
+Showcase hot-reloaded.]]} tool functions.shell, any JSON should be of the form {

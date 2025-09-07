@@ -1,0 +1,124 @@
+
+> portfolio@0.1.0 dev
+> next dev -p 3000
+
+   ▲ Next.js 15.5.2
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.30:3000
+
+ ✓ Starting...
+ ✓ Ready in 1240ms
+ ○ Compiling / ...
+ ⨯ ./src/components/ProjectsShowcase.tsx
+Error:   [31mx[0m Expected '</', got 'className'
+     ,-[[36;1;4m/Users/dynamiterdx/Documents/Python Scripts/personal-portfolio/src/components/ProjectsShowcase.tsx[0m:109:1]
+ [2m106[0m | 
+ [2m107[0m |             {/* Edge fades */
+ [2m108[0m |             <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#0b0b0b] to-transparent" />
+ [2m109[0m |             <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#0b0b0b] to-transparent" />
+     : [35;1m                 ^^^^^^^^^[0m
+ [2m110[0m | 
+ [2m111[0m |             {/* Dots reflecting scroll position */}
+ [2m112[0m |             <div className="mt-6 flex justify-center gap-2">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/ProjectsShowcase.tsx
+./src/app/page.tsx
+ ⨯ ./src/components/ProjectsShowcase.tsx
+Error:   [31mx[0m Expected '</', got 'className'
+     ,-[[36;1;4m/Users/dynamiterdx/Documents/Python Scripts/personal-portfolio/src/components/ProjectsShowcase.tsx[0m:109:1]
+ [2m106[0m | 
+ [2m107[0m |             {/* Edge fades */
+ [2m108[0m |             <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#0b0b0b] to-transparent" />
+ [2m109[0m |             <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#0b0b0b] to-transparent" />
+     : [35;1m                 ^^^^^^^^^[0m
+ [2m110[0m | 
+ [2m111[0m |             {/* Dots reflecting scroll position */}
+ [2m112[0m |             <div className="mt-6 flex justify-center gap-2">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/ProjectsShowcase.tsx
+./src/app/page.tsx
+ ⨯ ./src/components/ProjectsShowcase.tsx
+Error:   [31mx[0m Expected '</', got 'className'
+     ,-[[36;1;4m/Users/dynamiterdx/Documents/Python Scripts/personal-portfolio/src/components/ProjectsShowcase.tsx[0m:109:1]
+ [2m106[0m | 
+ [2m107[0m |             {/* Edge fades */
+ [2m108[0m |             <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#0b0b0b] to-transparent" />
+ [2m109[0m |             <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#0b0b0b] to-transparent" />
+     : [35;1m                 ^^^^^^^^^[0m
+ [2m110[0m | 
+ [2m111[0m |             {/* Dots reflecting scroll position */}
+ [2m112[0m |             <div className="mt-6 flex justify-center gap-2">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/ProjectsShowcase.tsx
+./src/app/page.tsx
+ GET / 500 in 3570ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled /_not-found in 1020ms (1776 modules)
+ GET / 200 in 808ms
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET / 200 in 14ms
+ ⨯ SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>) {
+  page: '/'
+}
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET / 200 in 238ms
+ ✓ Compiled in 161ms (1790 modules)
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+ GET / 200 in 84ms
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+ GET / 200 in 311ms
+ ✓ Compiled in 428ms (1785 modules)
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+ GET / 200 in 165ms
+ ✓ Compiled in 311ms (1785 modules)
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+ GET / 200 in 110ms
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+ GET / 200 in 284ms
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+ GET / 200 in 70ms
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+ GET / 200 in 66ms
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+ GET / 200 in 75ms
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+ GET / 200 in 63ms
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+ GET / 200 in 55ms
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+ GET / 200 in 66ms
+ ✓ Compiled in 349ms (1785 modules)
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+ GET / 200 in 158ms
+ GET / 200 in 17ms
+ ✓ Compiled in 141ms (1785 modules)
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+ GET / 200 in 70ms
+ GET / 200 in 22ms
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+ GET / 200 in 324ms
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+ GET / 200 in 81ms
+Each child in a list should have a unique "key" prop. See https://react.dev/link/warning-keys for more information.
+ GET / 200 in 62ms

@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import ConnectBanner from "@/components/ConnectBanner";
+import ProjectsShowcase from "@/components/ProjectsShowcase";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Hero />
       <Skills />
       <Experience />
+      <ProjectsShowcase />
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="rounded-2xl bg-zinc-900 text-white p-8 sm:p-10 grid md:grid-cols-2 gap-6 items-center">
