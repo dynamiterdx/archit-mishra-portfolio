@@ -20,20 +20,23 @@ const experiences = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-16 sm:py-24 bg-gradient-to-b from-zinc-50 to-white">
+    <section
+      id="skills"
+      className="py-16 sm:py-24 bg-gradient-to-b from-zinc-50 to-white dark:from-zinc-800 dark:to-zinc-900"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <h2 className="text-3xl font-bold">Resume & Skills</h2>
-        <p className="text-zinc-600 mt-2">Brief, animated overview—edit freely to match your profile.</p>
+        <p className="text-zinc-600 dark:text-zinc-300 mt-2">Brief, animated overview—edit freely to match your profile.</p>
 
         <div className="mt-8 grid gap-8 md:grid-cols-2">
           <div className="space-y-4">
             {skills.map((s) => (
               <div key={s.name} className="">
                 <div className="flex items-center justify-between mb-1">
-                  <div className="flex items-center gap-2"><s.Icon className="text-zinc-500" /><span className="font-medium">{s.name}</span></div>
-                  <span className="text-sm text-zinc-500">{s.level}%</span>
+                  <div className="flex items-center gap-2"><s.Icon className="text-zinc-500 dark:text-zinc-300" /><span className="font-medium">{s.name}</span></div>
+                  <span className="text-sm text-zinc-500 dark:text-zinc-400">{s.level}%</span>
                 </div>
-                <div className="h-2 rounded-full bg-zinc-200 overflow-hidden">
+                <div className="h-2 rounded-full bg-zinc-200 dark:bg-zinc-800 overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${s.level}%` }}
@@ -47,13 +50,20 @@ export default function Skills() {
           </div>
 
           <div className="relative pl-6">
-            <div className="absolute left-0 top-1 bottom-1 w-1 rounded-full bg-orange-100" />
+            <div className="absolute left-0 top-1 bottom-1 w-1 rounded-full bg-orange-100 dark:bg-orange-900/40" />
             <ul className="space-y-6">
               {experiences.map((e, i) => (
-                <motion.li key={i} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }} className="bg-white rounded-xl shadow-sm ring-1 ring-zinc-100 p-4">
+                <motion.li
+                  key={i}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="bg-white dark:bg-white/5 rounded-xl shadow-sm ring-1 ring-zinc-100 dark:ring-white/10 p-4"
+                >
                   <div className="font-semibold">{e.title}</div>
-                  <div className="text-sm text-zinc-500">{e.org} • {e.time}</div>
-                  <ul className="list-disc ml-5 mt-2 text-sm text-zinc-600 space-y-1">
+                  <div className="text-sm text-zinc-500 dark:text-zinc-400">{e.org} • {e.time}</div>
+                  <ul className="list-disc ml-5 mt-2 text-sm text-zinc-600 dark:text-zinc-300 space-y-1">
                     {e.points.map((p, j) => <li key={j}>{p}</li>)}
                   </ul>
                 </motion.li>
@@ -65,4 +75,3 @@ export default function Skills() {
     </section>
   );
 }
-
