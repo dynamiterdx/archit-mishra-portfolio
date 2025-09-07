@@ -11,7 +11,8 @@ export default function Hero() {
         <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-orange-500/20 blur-3xl" />
         <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-amber-200/60 blur-3xl" />
       </div>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-0 grid items-center gap-12 md:grid-cols-2">
+      {/* Reduce top padding to pull content closer to the navbar */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-8 sm:pt-12 pb-0 grid items-center gap-12 md:grid-cols-2">
         <div>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 rounded-full bg-orange-600/10 px-3 py-1 text-sm text-orange-700 ring-1 ring-orange-600/20">

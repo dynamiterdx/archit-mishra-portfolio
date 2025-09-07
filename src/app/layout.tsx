@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   description:
     "Portfolio of a GenAI-focused data scientist: projects, demos and photography.",
   metadataBase: new URL("https://example.com"),
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
