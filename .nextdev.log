@@ -1,24 +1,29 @@
 
 > portfolio@0.1.0 dev
-> next dev --turbopack -p 3000
+> next dev -p 3000
 
-   ▲ Next.js 15.5.2 (Turbopack)
+   ▲ Next.js 15.5.2
    - Local:        http://localhost:3000
    - Network:      http://192.168.1.8:3000
 
  ✓ Starting...
- ✓ Ready in 657ms
+ ✓ Ready in 1303ms
  ○ Compiling / ...
- ✓ Compiled / in 1684ms
- GET / 200 in 1986ms
- ✓ Compiled /favicon.ico in 385ms
- GET /favicon.ico?favicon.0b3bf435.ico 200 in 649ms
- ✓ Compiled /projects in 175ms
- GET /projects 200 in 201ms
- GET / 200 in 41ms
- GET /projects 200 in 43ms
- GET / 200 in 38ms
- GET /projects 200 in 40ms
- ✓ Compiled /photography in 182ms
- GET /photography 200 in 208ms
- GET / 200 in 38ms
+ ✓ Compiled / in 2.4s (1414 modules)
+ GET / 200 in 2896ms
+ ✓ Compiled /photography in 400ms (1476 modules)
+ GET /photography 200 in 510ms
+ GET /photography 200 in 11ms
+ ✓ Compiled in 172ms (1476 modules)
+ GET /photography 200 in 62ms
+ ✓ Compiled /projects in 129ms (1469 modules)
+ GET /projects 200 in 164ms
+ GET / 200 in 25ms
+ GET / 200 in 10ms
+ GET / 200 in 23ms
+ GET / 200 in 24ms
+ GET / 200 in 23ms
+ ✓ Compiled in 352ms (1483 modules)
+ GET / 200 in 60ms
+ ✓ Compiled in 136ms (1483 modules)
+ GET / 200 in 29ms

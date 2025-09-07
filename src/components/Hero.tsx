@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-orange-500/20 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-amber-200/50 blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-amber-200/60 blur-3xl" />
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 grid items-center gap-12 md:grid-cols-2">
         <div>
@@ -29,23 +29,13 @@ export default function Hero() {
           </motion.div>
         </div>
         <div className="relative">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mx-auto h-64 w-64 sm:h-80 sm:w-80 rounded-[32px] bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-700 p-[2px] shadow-2xl"
-          >
-            <div className="h-full w-full rounded-[30px] bg-white grid place-items-center">
-              <div className="text-center px-6">
-                <div className="text-6xl">🤖</div>
-                <div className="mt-2 font-semibold">Generative AI</div>
-                <div className="text-sm text-zinc-500">RAG · Agents · Vision · MLOps</div>
-              </div>
-            </div>
+          <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.1 }} className="relative mx-auto sm:h-[420px] sm:w-[420px] h-80 w-80">
+            <img src="/images/hero-portrait.svg" alt="Portrait illustration" className="absolute inset-0 h-full w-full object-contain" />
           </motion.div>
         </div>
+        {/* Soft fade to white to avoid abrupt gradient end */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent to-white" />
       </div>
     </section>
   );
 }
-
