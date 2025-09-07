@@ -22,7 +22,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative z-10 -mt-20 sm:-mt-28 pt-4 sm:pt-6 pb-16 sm:pb-24 text-white bg-gradient-to-b from-[#1b1b1d] to-[#111112]"
+      className="relative z-10 -mt-6 sm:-mt-10 pt-4 sm:pt-6 pb-16 sm:pb-24 text-white bg-gradient-to-b from-[#1b1b1d] to-[#111112]"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <h2 className="text-3xl font-bold">Resume & Skills</h2>

@@ -34,8 +34,12 @@ export default function ConnectBanner() {
             <div>
               <div className="text-orange-400 font-semibold">Contact</div>
               <ul className="mt-2 space-y-1 text-zinc-300 text-sm">
-                <li>+XX 000 000 000</li>
-                <li>you@email.com</li>
+                <li>
+                  <a href="tel:+919161251999" className="hover:text-white">+91 9161251999</a>
+                </li>
+                <li>
+                  <a href="mailto:architmishrapro@gmail.com" className="hover:text-white">architmishrapro@gmail.com</a>
+                </li>
                 <li>yourdomain.com</li>
               </ul>
             </div>
@@ -43,7 +47,7 @@ export default function ConnectBanner() {
 
           <div className="my-8 border-t border-white/10" />
           <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-400">
-            <div>Copyright © {new Date().getFullYear()} Your Name. All rights reserved.</div>
+            <div>Copyright © {new Date().getFullYear()} Archit Mishra. All rights reserved.</div>
             <div>
               <a href="#" className="hover:text-white">User Terms & Conditions</a>
               <span className="mx-2">|</span>

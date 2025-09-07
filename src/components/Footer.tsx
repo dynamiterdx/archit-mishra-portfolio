@@ -4,7 +4,8 @@ import { usePathname } from "next/navigation";
 
 export default function Footer() {
   const pathname = usePathname();
-  if (pathname === "/") return null; // Hide footer on home; ConnectBanner acts as footer
+  // Hide the white footer on the home page where the dark Connect banner acts as the footer
+  if (pathname === "/") return null;
   return (
     <footer className="border-t border-zinc-100 bg-zinc-50/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-zinc-600 grid gap-6 md:grid-cols-3">
@@ -21,15 +22,19 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <div className="font-semibold text-zinc-800">Get updates</div>
-          <form className="mt-2 flex gap-2">
-            <input className="w-full rounded-md border border-zinc-200 px-3 py-2" placeholder="Email address" />
-            <button className="rounded-md bg-orange-600 text-white px-3 py-2">Send</button>
-          </form>
+          <div className="font-semibold text-zinc-800">Contact</div>
+          <ul className="mt-2 space-y-1">
+            <li>
+              <a href="tel:+919161251999" className="hover:text-zinc-700">+91 9161251999</a>
+            </li>
+            <li>
+              <a href="mailto:architmishrapro@gmail.com" className="hover:text-zinc-700">architmishrapro@gmail.com</a>
+            </li>
+          </ul>
         </div>
       </div>
       <div className="text-center text-xs text-zinc-500 pb-8">
-        © {new Date().getFullYear()} Archit Mishra — All rights reserved.
+        © {new Date().getFullYear()} Archit Mishra. All rights reserved.
       </div>
     </footer>
   );
