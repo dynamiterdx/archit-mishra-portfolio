@@ -2,7 +2,14 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import profile from "@/data/profile.json" assert { type: "json" };
+import profileJson from "@/data/profile.json" assert { type: "json" };
+
+type Profile = {
+  image?: string;
+  alt?: string;
+};
+
+const profile = profileJson as Profile;
 
 export default function Hero() {
   return (
@@ -45,8 +52,8 @@ export default function Hero() {
             <div className="absolute inset-0 p-4 z-20">
               <div className="relative h-full w-full">
                 <Image
-                  src={(profile as any).image || "/images/hero-portrait.svg"}
-                  alt={(profile as any).alt || "Portrait"}
+                  src={profile.image || "/images/hero-portrait.svg"}
+                  alt={profile.alt || "Portrait"}
                   fill
                   priority
                   className="object-contain [background:transparent!important]"
