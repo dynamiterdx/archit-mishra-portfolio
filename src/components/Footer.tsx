@@ -28,7 +28,9 @@ export default function Footer() {
           </form>
         </div>
       </div>
-      <div className="text-center text-xs text-zinc-500 pb-8">© {new Date().getFullYear()} Your Name</div>
+      <div className="text-center text-xs text-zinc-500 pb-8">
+        © {new Date().getFullYear()} Archit Mishra — All rights reserved.
+      </div>
     </footer>
   );
 }
