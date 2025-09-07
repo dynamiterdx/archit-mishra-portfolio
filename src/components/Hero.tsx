@@ -11,7 +11,7 @@ export default function Hero() {
         <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-orange-500/20 blur-3xl" />
         <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-amber-200/60 blur-3xl" />
       </div>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 grid items-center gap-12 md:grid-cols-2">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-0 grid items-center gap-12 md:grid-cols-2">
         <div>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 rounded-full bg-orange-600/10 px-3 py-1 text-sm text-orange-700 ring-1 ring-orange-600/20">
@@ -35,28 +35,26 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative mx-auto sm:h-[420px] sm:w-[420px] h-80 w-80"
+            className="relative mx-auto sm:h-[680px] sm:w-[680px] h-[420px] w-[420px] translate-y-2 sm:translate-y-4 z-0"
           >
             {/* Decorative orange semicircle behind the cutout; no box/panel */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[125%] h-[70%] rounded-t-[50%] bg-orange-200/70 dark:bg-orange-300/40 blur-sm" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[160%] h-[85%] rounded-t-[50%] bg-orange-200/70 dark:bg-orange-300/40 blur-sm z-0 pointer-events-none" />
 
             {/* User-provided cutout image (PNG/SVG/JPG) */}
-            <div className="absolute inset-0 p-4">
+            <div className="absolute inset-0 p-4 z-20">
               <div className="relative h-full w-full">
                 <Image
                   src={(profile as any).image || "/images/hero-portrait.svg"}
                   alt={(profile as any).alt || "Portrait"}
                   fill
                   priority
-                  className="object-contain drop-shadow-2xl [background:transparent!important]"
+                  className="object-contain [background:transparent!important]"
                   sizes="(min-width: 1024px) 420px, 320px"
                 />
               </div>
             </div>
           </motion.div>
         </div>
-        {/* Soft fade to white to avoid abrupt gradient end */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent to-white" />
       </div>
     </section>
   );
