@@ -1,6 +1,10 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+  if (pathname === "/") return null; // Hide footer on home; ConnectBanner acts as footer
   return (
     <footer className="border-t border-zinc-100 bg-zinc-50/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-zinc-600 grid gap-6 md:grid-cols-3">
