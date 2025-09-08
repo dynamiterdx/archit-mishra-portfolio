@@ -40,7 +40,6 @@ export default function ConnectBanner() {
                 <li>
                   <a href="mailto:architmishrapro@gmail.com" className="hover:text-white">architmishrapro@gmail.com</a>
                 </li>
-                <li>yourdomain.com</li>
               </ul>
             </div>
           </div>
