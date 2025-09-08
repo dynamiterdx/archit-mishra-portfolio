@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const navItems = [
@@ -16,6 +16,42 @@ const navItems = [
 
 export default function Navbar() {
   const pathname = usePathname();
+
+  // Track which section is in view on the homepage for hash links
+  const [activeSection, setActiveSection] = useState<string>("home");
+
+  useEffect(() => {
+    if (pathname !== "/") return; // Only run scroll spy on home page
+
+    const ids = ["skills", "resume", "services"]; // sections that exist
+    const elements = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => Boolean(el));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Pick the entry most visible near the top
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible?.target?.id) setActiveSection(visible.target.id);
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [pathname]);
+
+  // utility to decide if a nav item should be highlighted
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/" && activeSection === "home";
+    if (href.startsWith("/#")) {
+      const id = href.split("#")[1];
+      return pathname === "/" && activeSection === id;
+    }
+    return pathname.startsWith(href);
+  };
   return (
     <header className="sticky top-4 z-50">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -23,14 +59,24 @@ export default function Navbar() {
           <ul className="flex items-center justify-between px-3">
             {/* Left cluster */}
             <div className="flex items-center">
-              {navItems.slice(0,3).map((item) => (
-                <li key={item.label} className="p-1">
-                  <Link href={item.href} className="relative block rounded-full px-3 py-2 text-sm font-medium text-white/90 hover:text-white transition-colors">
-                    <span className="absolute inset-0 rounded-full bg-white/10 opacity-0 hover:opacity-100 transition-opacity" />
-                    <span className="relative z-10">{item.label}</span>
-                  </Link>
-                </li>
-              ))}
+              {navItems.slice(0,3).map((item) => {
+                const active = isActive(item.href);
+                return (
+                  <li key={item.label} className="p-1">
+                    <Link
+                      href={item.href}
+                      className={`relative block rounded-full px-3 py-2 text-sm font-medium transition-colors ${
+                        active ? "text-white" : "text-white/90 hover:text-white"
+                      }`}
+                    >
+                      {active && (
+                        <span className="absolute inset-0 rounded-full bg-orange-600" />
+                      )}
+                      <span className="relative z-10">{item.label}</span>
+                    </Link>
+                  </li>
+                );
+              })}
             </div>
 
             {/* Center logo */}
@@ -43,14 +89,24 @@ export default function Navbar() {
 
             {/* Right cluster */}
             <div className="flex items-center">
-              {navItems.slice(3).map((item) => (
-                <li key={item.label} className="p-1">
-                  <Link href={item.href} className="relative block rounded-full px-3 py-2 text-sm font-medium text-white/90 hover:text-white transition-colors">
-                    <span className="absolute inset-0 rounded-full bg-white/10 opacity-0 hover:opacity-100 transition-opacity" />
-                    <span className="relative z-10">{item.label}</span>
-                  </Link>
-                </li>
-              ))}
+              {navItems.slice(3).map((item) => {
+                const active = isActive(item.href);
+                return (
+                  <li key={item.label} className="p-1">
+                    <Link
+                      href={item.href}
+                      className={`relative block rounded-full px-3 py-2 text-sm font-medium transition-colors ${
+                        active ? "text-white" : "text-white/90 hover:text-white"
+                      }`}
+                    >
+                      {active && (
+                        <span className="absolute inset-0 rounded-full bg-orange-600" />
+                      )}
+                      <span className="relative z-10">{item.label}</span>
+                    </Link>
+                  </li>
+                );
+              })}
               <li className="pl-2 pr-1">
                 <ThemeToggle />
               </li>
