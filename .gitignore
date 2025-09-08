@@ -16,7 +16,9 @@
 # next.js
 /.next/
 /out/
-.nextdev*
+# Ignore local Next dev helper files (any port)
+.nextdev-*.log
+.nextdev-*.pid
 
 # production
 /build
