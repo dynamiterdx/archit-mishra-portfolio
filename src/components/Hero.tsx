@@ -13,7 +13,7 @@ const profile = profileJson as Profile;
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden">
+    <section id="home" className="relative overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-orange-500/20 blur-3xl" />
         <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-amber-200/60 blur-3xl" />

@@ -23,7 +23,7 @@ export default function Navbar() {
   useEffect(() => {
     if (pathname !== "/") return; // Only run scroll spy on home page
 
-    const ids = ["skills", "resume", "services"]; // sections that exist
+    const ids = ["home", "skills", "resume", "services"]; // sections that exist
     const elements = ids
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el));
@@ -35,6 +35,8 @@ export default function Navbar() {
           .filter((e) => e.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         if (visible?.target?.id) setActiveSection(visible.target.id);
+        // If nothing is intersecting (e.g., scrolled to very top), default to home
+        if (!visible) setActiveSection("home");
       },
       { rootMargin: "-40% 0px -55% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
     );
