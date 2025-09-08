@@ -67,12 +67,12 @@ export default function Navbar() {
                   <li key={item.label} className="p-1">
                     <Link
                       href={item.href}
-                      className={`relative block rounded-full px-3 py-2 text-sm font-medium transition-colors ${
+                      className={`relative block rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                         active ? "text-white" : "text-white/90 hover:text-white"
                       }`}
                     >
                       {active && (
-                        <span className="absolute inset-0 rounded-full bg-orange-600" />
+                        <span className="absolute inset-0 rounded-[26px] md:rounded-[30px] bg-orange-600 ring-1 ring-orange-500/20 shadow-lg" />
                       )}
                       <span className="relative z-10">{item.label}</span>
                     </Link>
@@ -97,12 +97,12 @@ export default function Navbar() {
                   <li key={item.label} className="p-1">
                     <Link
                       href={item.href}
-                      className={`relative block rounded-full px-3 py-2 text-sm font-medium transition-colors ${
+                      className={`relative block rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                         active ? "text-white" : "text-white/90 hover:text-white"
                       }`}
                     >
                       {active && (
-                        <span className="absolute inset-0 rounded-full bg-orange-600" />
+                        <span className="absolute inset-0 rounded-[26px] md:rounded-[30px] bg-orange-600 ring-1 ring-orange-500/20 shadow-lg" />
                       )}
                       <span className="relative z-10">{item.label}</span>
                     </Link>

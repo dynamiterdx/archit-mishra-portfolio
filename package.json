@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:clean": "rimraf .next && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -17,6 +18,7 @@
     "react-wrap-balancer": "^1.1.1"
   },
   "devDependencies": {
+    "rimraf": "^6",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
