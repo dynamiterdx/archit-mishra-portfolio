@@ -4,19 +4,21 @@
     "description": "Modular Retrieval-Augmented Generation stack with embeddings, vector DB, and reranking.",
     "repo": "https://github.com/yourname/rag-starter",
     "demoUrl": "https://example.com/demo",
-    "tags": ["LLM", "RAG", "TypeScript"]
+    "tags": ["LLM", "RAG", "TypeScript"],
+    "cover": "/images/prj-1.svg"
   },
   {
     "title": "Agentic Workflows",
     "description": "Composable multi-tool agents with memory and task orchestration.",
     "repo": "https://github.com/yourname/agentic-workflows",
-    "tags": ["Agents", "Planning", "Python"]
+    "tags": ["Agents", "Planning", "Python"],
+    "cover": "/images/prj-2.svg"
   },
   {
     "title": "Vision QA",
     "description": "Grounded visual question answering using CLIP and LLM reasoning.",
     "repo": "https://github.com/yourname/vision-qa",
-    "tags": ["Vision", "Multimodal"]
+    "tags": ["Vision", "Multimodal"],
+    "cover": "/images/prj-3.svg"
   }
 ]
-

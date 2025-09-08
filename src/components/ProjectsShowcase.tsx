@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import projects from "@/data/projects.json";
+import Image from "next/image";
+import { slugify } from "@/lib/slug";
 import { FaArrowUpRightFromSquare, FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { useEffect, useRef, useState } from "react";
 
@@ -10,6 +12,8 @@ type P = {
   repo: string;
   demoUrl?: string;
   tags?: string[];
+  slug?: string;
+  cover?: string;
 };
 
 const thumbs = [
@@ -80,24 +84,34 @@ export default function ProjectsShowcase() {
 
             <div ref={scrollerRef} className="flex gap-4 sm:gap-5 lg:gap-6 overflow-x-auto snap-x snap-mandatory scroll-px-4 sm:scroll-px-8 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden pr-6">
               {list.map((p, i) => (
-                <article key={p.title} className="relative overflow-hidden rounded-[24px] bg-white/5 ring-1 ring-white/15 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] shrink-0 snap-start w-[220px] sm:w-[250px] md:w-[280px] lg:w-[300px] xl:w-[320px]">
+                <article key={p.title} className="relative overflow-hidden rounded-[24px] bg-white/5 ring-1 ring-white/15 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] shrink-0 snap-start w-[260px] sm:w-[300px] md:w-[340px] lg:w-[360px] xl:w-[380px]">
                   {/* frosted frame lines */}
                   <div className="absolute inset-0 rounded-[24px] pointer-events-none">
                     <div className="absolute inset-3 rounded-[20px] ring-1 ring-white/15" />
                   </div>
 
-                  <div className="p-4">
-                    <h3 className="text-sm md:text-base font-semibold drop-shadow-[0_1px_0_rgba(0,0,0,0.4)]">{p.title}</h3>
-                    <p className="mt-1 text-xs md:text-[13px] text-white/70 line-clamp-2">{p.description}</p>
-                  </div>
-
-                  <div className="px-4 pb-4">
-                    <div className="relative overflow-hidden rounded-xl bg-zinc-900 aspect-[5/4]">
-                      <img src={thumbs[i%thumbs.length]} alt="project preview" className="h-full w-full object-cover" />
+                  <div className="px-4 pt-4">
+                    <div className="relative overflow-hidden rounded-xl bg-zinc-900 aspect-[16/9]">
+                      <Image src={p.cover || thumbs[i%thumbs.length]} alt="project preview" fill className="object-cover" />
                     </div>
                   </div>
 
-                  <Link href={p.repo} target="_blank" className="group absolute bottom-3 right-3 grid h-9 w-9 place-items-center rounded-full bg-white/10 ring-1 ring-white/20 backdrop-blur hover:bg-white/20 transition">
+                  <div className="px-4 pb-10">
+                    <h3 className="mt-3 text-sm md:text-base font-semibold drop-shadow-[0_1px_0_rgba(0,0,0,0.4)]">{p.title}</h3>
+                    {p.tags?.length ? (
+                      <div className="mt-2 flex flex-wrap gap-1.5">
+                        {p.tags.slice(0,6).map((t) => (
+                          <span key={t} className="text-[10px] md:text-xs rounded-full bg-white/10 ring-1 ring-white/15 px-2 py-0.5 text-white/90">{t}</span>
+                        ))}
+                      </div>
+                    ) : null}
+                    <p className="mt-2 text-xs md:text-[13px] text-white/70 line-clamp-2">{p.description}</p>
+                  </div>
+
+                  {/* Full-card link to details (keeps repo button above) */}
+                  <Link href={`/projects/${p.slug ?? slugify(p.title)}`} className="absolute inset-0 z-10" aria-label={`Open ${p.title} details`} />
+
+                  <Link href={p.repo} target="_blank" className="group absolute bottom-3 right-3 z-20 grid h-9 w-9 place-items-center rounded-full bg-white/10 ring-1 ring-white/20 backdrop-blur hover:bg-white/20 transition">
                     <FaArrowUpRightFromSquare className="text-white text-lg" />
                   </Link>
                 </article>
