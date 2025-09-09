@@ -5,7 +5,7 @@ export default function ConnectBanner() {
   return (
     <section className="mt-16">
       {/* Full-bleed dark block that hugs screen edges */}
-      <div className="bg-zinc-900 text-white rounded-t-[36px]">
+      <div className="bg-zinc-900 text-white rounded-t-[36px] footer-fade-in">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12">
           <div className="flex items-center justify-between gap-6">
             <h2 className="text-3xl sm:text-4xl font-extrabold">Lets Connect there</h2>
