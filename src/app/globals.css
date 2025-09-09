@@ -27,3 +27,18 @@ body {
 /* Accent utilities and helpers */
 .btn-primary { @apply rounded-full bg-orange-600 text-white px-5 py-3 font-medium hover:bg-orange-700; }
 .section { @apply py-12 sm:py-16; }
+
+@keyframes footer-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-fade-in {
+  animation: footer-fade-in 0.6s ease-out forwards;
+}
