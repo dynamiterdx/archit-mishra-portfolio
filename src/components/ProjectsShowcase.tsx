@@ -1,20 +1,12 @@
 "use client";
 import Link from "next/link";
-import projects from "@/data/projects.json";
 import Image from "next/image";
 import { slugify } from "@/lib/slug";
+import type { ProjectMeta } from "@/lib/projects";
 import { FaArrowUpRightFromSquare, FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { useEffect, useRef, useState } from "react";
 
-type P = {
-  title: string;
-  description: string;
-  repo: string;
-  demoUrl?: string;
-  tags?: string[];
-  slug?: string;
-  cover?: string;
-};
+type Props = { projects: ProjectMeta[] };
 
 const thumbs = [
   "/images/prj-1.svg",
@@ -22,8 +14,8 @@ const thumbs = [
   "/images/prj-3.svg",
 ];
 
-export default function ProjectsShowcase() {
-  const list = (projects as P[]).slice(0, 12);
+export default function ProjectsShowcase({ projects }: Props) {
+  const list = projects.slice(0, 12);
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [page, setPage] = useState(0);
   const [pageCount, setPageCount] = useState(1);
@@ -105,13 +97,13 @@ export default function ProjectsShowcase() {
                         ))}
                       </div>
                     ) : null}
-                    <p className="mt-2 text-xs md:text-[13px] text-white/70 line-clamp-2">{p.description}</p>
+                    <p className="mt-2 text-xs md:text-[13px] text-white/70 line-clamp-2">{p.summary}</p>
                   </div>
 
                   {/* Full-card link to details (keeps repo button above) */}
                   <Link href={`/projects/${p.slug ?? slugify(p.title)}`} className="absolute inset-0 z-10" aria-label={`Open ${p.title} details`} />
 
-                  <Link href={p.repo} target="_blank" className="group absolute bottom-3 right-3 z-20 grid h-9 w-9 place-items-center rounded-full bg-white/10 ring-1 ring-white/20 backdrop-blur hover:bg-white/20 transition">
+                  <Link href={p.linkOut || `/projects/${p.slug ?? slugify(p.title)}`} target={p.linkOut ? "_blank" : undefined} className="group absolute bottom-3 right-3 z-20 grid h-9 w-9 place-items-center rounded-full bg-white/10 ring-1 ring-white/20 backdrop-blur hover:bg-white/20 transition">
                     <FaArrowUpRightFromSquare className="text-white text-lg" />
                   </Link>
                 </article>

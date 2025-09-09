@@ -3,14 +3,16 @@ import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import ConnectBanner from "@/components/ConnectBanner";
 import ProjectsShowcase from "@/components/ProjectsShowcase";
+import { getFeaturedProjects } from "@/lib/projects";
 
-export default function Home() {
+export default async function Home() {
+  const featured = await getFeaturedProjects();
   return (
     <div>
       <Hero />
       <Skills />
       <Experience />
-      <ProjectsShowcase />
+      <ProjectsShowcase projects={featured} />
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="rounded-2xl bg-zinc-900 text-white p-8 sm:p-10 grid md:grid-cols-2 gap-6 items-center">

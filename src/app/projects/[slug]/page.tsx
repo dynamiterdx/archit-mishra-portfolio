@@ -1,18 +1,16 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import projects from "@/data/projects.json";
-import type { Project } from "@/components/ProjectCard";
-import { slugify } from "@/lib/slug";
+import { getAllProjectsMeta, getProjectBySlug } from "@/lib/projects";
 import Image from "next/image";
 
-export function generateStaticParams() {
-  return (projects as Project[]).map((p) => ({ slug: p.slug ?? slugify(p.title) }));
+export async function generateStaticParams() {
+  const all = await getAllProjectsMeta();
+  return all.map((p) => ({ slug: p.slug }));
 }
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const all = projects as Project[];
-  const project = all.find((p) => (p.slug ?? slugify(p.title)) === slug);
+  const project = await getProjectBySlug(slug);
   if (!project) return notFound();
 
   return (
@@ -53,7 +51,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 </div>
               )}
               <div className="mt-4 flex flex-wrap gap-3">
-                <Link href={project.repo} target="_blank" className="rounded-full ring-1 ring-zinc-300 px-4 py-2 font-medium hover:bg-zinc-50">GitHub Repo</Link>
+                {project.repo && (
+                  <Link href={project.repo} target="_blank" className="rounded-full ring-1 ring-zinc-300 px-4 py-2 font-medium hover:bg-zinc-50">GitHub Repo</Link>
+                )}
                 {project.demoUrl && (
                   <Link href={project.demoUrl} target="_blank" className="rounded-full bg-orange-600 text-white px-4 py-2 font-medium hover:bg-orange-700">Live Demo</Link>
                 )}
@@ -65,7 +65,12 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           <div>
             <div className="rounded-2xl ring-1 ring-zinc-200 p-5">
               <h2 className="text-xl font-semibold">About this project</h2>
-              <p className="mt-3 text-zinc-700 leading-relaxed">{project.about || project.description}</p>
+              {project.summary && (
+                <p className="mt-3 text-zinc-700 leading-relaxed">{project.summary}</p>
+              )}
+              <div className="prose prose-zinc max-w-none mt-6">
+                {project.content}
+              </div>
             </div>
           </div>
         </div>

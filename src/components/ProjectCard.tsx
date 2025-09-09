@@ -4,7 +4,8 @@ import { slugify } from "@/lib/slug";
 
 export type Project = {
   title: string;
-  description: string;
+  description?: string;
+  summary?: string;
   repo: string;
   demoUrl?: string;
   tags?: string[];
@@ -35,7 +36,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             ))}
           </div>
         )}
-        <p className="mt-3 text-sm text-zinc-600 line-clamp-3">{project.description}</p>
+        <p className="mt-3 text-sm text-zinc-600 line-clamp-3">{project.summary || project.description}</p>
         <div className="mt-4 flex gap-3">
           <Link href={`/projects/${slug}`} className="text-sm font-medium text-zinc-700 hover:text-orange-600">Details →</Link>
           <Link href={project.repo} target="_blank" className="text-sm font-medium text-zinc-700 hover:text-orange-600">GitHub →</Link>
