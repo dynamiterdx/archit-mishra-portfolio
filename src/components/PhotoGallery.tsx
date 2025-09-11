@@ -188,7 +188,22 @@ function Lightbox({
           )}
           <div className="flex flex-wrap items-center gap-3">
             {p.location && (
-              <span className="px-2 py-1 rounded bg-white/10">{p.location}</span>
+              <span className="px-2 py-1 rounded bg-white/10 inline-flex items-center gap-1.5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-4 h-4"
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M11.47 3.84a6.75 6.75 0 0 1 8.69 8.69l-5.41 9.41a2.25 2.25 0 0 1-3.86 0l-5.41-9.41a6.75 6.75 0 0 1 6-8.28Zm2.28 6.66a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                {p.location}
+              </span>
             )}
             {p.album && (
               <span className="px-2 py-1 rounded bg-white/10">Album: {p.album}</span>
