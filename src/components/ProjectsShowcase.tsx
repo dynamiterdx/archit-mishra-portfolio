@@ -52,9 +52,7 @@ export default function ProjectsShowcase({ projects }: Props) {
     <section id="services" className="py-16 sm:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="relative overflow-hidden rounded-[32px] bg-[radial-gradient(1200px_600px_at_20%_20%,#0b0b0b,transparent),radial-gradient(900px_600px_at_80%_10%,#141414,transparent)] text-white ring-1 ring-white/10">
-          {/* Decorative blobs */}
-          <div className="pointer-events-none absolute -top-10 -left-10 h-40 w-40 rounded-full bg-orange-500/30 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-10 -right-10 h-48 w-48 rounded-full bg-amber-300/25 blur-3xl" />
+          {/* Removed decorative blurred blobs to eliminate halo effect */}
 
           <div className="px-6 sm:px-10 pt-10">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">

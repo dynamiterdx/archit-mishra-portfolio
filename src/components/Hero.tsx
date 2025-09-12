@@ -64,8 +64,8 @@ function HeroVisual() {
           <span className="block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap">Data Scientist</span>
         </motion.div>
 
-        {/* Soft orange arc behind cutout */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] sm:w-[160%] h-[68%] rounded-t-[50%] bg-orange-300/60 dark:bg-orange-300/30 blur-md z-10 pointer-events-none" />
+        {/* Removed soft orange arc/halo behind cutout */}
+        {/* (intentionally left blank) */}
 
         {/* Cutout image */}
         <div className="absolute inset-0 p-4 z-30">
@@ -106,11 +106,7 @@ function HeroVisual() {
 export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden">
-      {/* subtle ambient blobs */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-orange-500/20 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-amber-200/60 blur-3xl" />
-      </div>
+      {/* Removed ambient blob halos from the background */}
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 sm:pt-16 pb-0">
         {/* Desktop layout: center visual; position quote absolutely on the left */}
