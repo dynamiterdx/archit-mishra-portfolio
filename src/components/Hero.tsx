@@ -50,7 +50,15 @@ function HeroVisual() {
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="pointer-events-none select-none absolute top-[6%] left-1/2 -translate-x-1/2 z-30 text-center font-extrabold tracking-tight text-black dark:text-white opacity-100 mix-blend-normal leading-[0.92] w-auto flex flex-col items-center gap-1"
+          /*
+           * Show the headline behind the cutout and ensure it has
+           * strong contrast in both light and dark themes.
+           *
+           * - z-20 keeps it below the image (z-30) but above the arc (z-10)
+           * - mix-blend-difference with white text auto-inverts on light bg
+           *   so the headline stays visible in light mode too.
+           */
+          className="pointer-events-none select-none absolute top-[6%] left-1/2 -translate-x-1/2 z-20 text-center font-extrabold tracking-tight text-white opacity-100 mix-blend-difference leading-[0.92] w-auto flex flex-col items-center gap-1"
         >
           <span className="block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap">I’m Archit,</span>
           <span className="block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap">Data Scientist</span>
