@@ -29,7 +29,7 @@ function QuoteBlock() {
         I build intelligent products with LLMs and data.
       </p>
       <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-        Specializing in RAG, agents, prompt engineering and full‑stack ML systems. I love shipping delightful, measurable experiences.
+        Specializing in RAG, agents, prompt engineering and full-stack ML systems. I love shipping delightful, measurable experiences.
       </p>
     </motion.blockquote>
   );
@@ -50,21 +50,13 @@ function HeroVisual() {
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          /*
-           * Show the headline behind the cutout and ensure it has
-           * strong contrast in both light and dark themes.
-           *
-           * - z-20 keeps it below the image (z-30) but above the arc (z-10)
-           * - mix-blend-difference with white text auto-inverts on light bg
-           *   so the headline stays visible in light mode too.
-           */
           className="pointer-events-none select-none absolute top-[6%] left-1/2 -translate-x-1/2 z-20 text-center font-extrabold tracking-tight text-zinc-900 dark:text-white opacity-100 leading-[0.92] w-auto flex flex-col items-center gap-1"
         >
           <span className="block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap">I’m Archit,</span>
           <span className="block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap">Data Scientist</span>
         </motion.div>
 
-        {/* Orange arc behind the hero (true semicircle via SVG; keeps perfect 2:1 ratio) */}
+        {/* Orange arc behind the hero */}
         <div
           aria-hidden
           className="absolute bottom-2 sm:bottom-3 lg:bottom-4 left-1/2 -translate-x-1/2 w-[576px] sm:w-[648px] lg:w-[720px] aspect-[2/1] z-10 pointer-events-none"
@@ -74,15 +66,15 @@ function HeroVisual() {
           </svg>
         </div>
 
-        {/* Cutout image */}
-        <div className="absolute inset-0 p-4 z-30">
+        {/* Cutout image — centered with arc */}
+        <div className="absolute top-0 left-1/2 -translate-x-[60%] z-30 w-[576px] sm:w-[648px] lg:w-[720px] h-full p-4">
           <div className="relative h-full w-full">
             <Image
               src={profile.image || "/images/hero-portrait.svg"}
               alt={profile.alt || "Portrait"}
               fill
               priority
-              className="object-contain [background:transparent!important]"
+              className="object-contain object-bottom [background:transparent!important]"
               sizes="(min-width: 1024px) 520px, 90vw"
             />
           </div>
@@ -113,8 +105,6 @@ function HeroVisual() {
 export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden">
-      {/* Removed ambient blob halos from the background */}
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-0 sm:pt-2 pb-0">
         {/* Desktop layout: center visual; position quote absolutely on the left */}
         <div className="relative hidden lg:block">
