@@ -42,7 +42,7 @@ function HeroVisual() {
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7, delay: 0.05 }}
-        className="relative mx-auto -mt-10 sm:-mt-14 lg:-mt-16 h-[380px] sm:h-[480px] lg:h-[540px] w-full max-w-[480px]"
+        className="relative mx-auto -mt-10 sm:-mt-14 lg:-mt-16 h-[570px] sm:h-[720px] lg:h-[810px] w-full max-w-[720px]"
       >
         {/* Background headline behind cutout (two lines like Jenny) */}
         <motion.div
@@ -67,7 +67,7 @@ function HeroVisual() {
         {/* Orange arc behind the hero (true semicircle via SVG; keeps perfect 2:1 ratio) */}
         <div
           aria-hidden
-          className="absolute bottom-2 sm:bottom-3 lg:bottom-4 left-1/2 -translate-x-1/2 w-[120%] sm:w-[135%] lg:w-[150%] aspect-[2/1] z-10 pointer-events-none"
+          className="absolute bottom-2 sm:bottom-3 lg:bottom-4 left-1/2 -translate-x-1/2 w-[576px] sm:w-[648px] lg:w-[720px] aspect-[2/1] z-10 pointer-events-none"
         >
           <svg viewBox="0 0 200 100" preserveAspectRatio="xMidYMax meet" className="w-full h-full">
             <path d="M0,100 A100,100 0 0 1 200,100 L200,100 L0,100 Z" fill="#fbbf24" />
