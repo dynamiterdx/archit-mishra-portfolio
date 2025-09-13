@@ -67,7 +67,7 @@ function HeroVisual() {
         {/* Orange arc behind the hero (true semicircle via SVG; keeps perfect 2:1 ratio) */}
         <div
           aria-hidden
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[120%] sm:w-[135%] lg:w-[150%] aspect-[2/1] z-10 pointer-events-none"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] sm:w-[101.25%] lg:w-[90.5%] aspect-[2/1] z-10 pointer-events-none"
         >
           <svg viewBox="0 0 200 100" preserveAspectRatio="xMidYMax meet" className="w-full h-full">
             <path d="M0,100 A100,100 0 0 1 200,100 L200,100 L0,100 Z" fill="#fbbf24" />
