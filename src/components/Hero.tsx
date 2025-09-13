@@ -42,7 +42,7 @@ function HeroVisual() {
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7, delay: 0.05 }}
-        className="relative mx-auto h-[520px] sm:h-[640px] lg:h-[720px] w-full max-w-[620px] sm:max-w-[720px] lg:max-w-[820px]"
+        className="relative mx-auto -mt-10 sm:-mt-14 lg:-mt-16 h-[380px] sm:h-[480px] lg:h-[540px] w-full max-w-[480px]"
       >
         {/* Background headline behind cutout (two lines like Jenny) */}
         <motion.div
@@ -67,7 +67,7 @@ function HeroVisual() {
         {/* Orange arc behind the hero (true semicircle via SVG; keeps perfect 2:1 ratio) */}
         <div
           aria-hidden
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] sm:w-[101.25%] lg:w-[90.5%] aspect-[2/1] z-10 pointer-events-none"
+          className="absolute bottom-2 sm:bottom-3 lg:bottom-4 left-1/2 -translate-x-1/2 w-[120%] sm:w-[135%] lg:w-[150%] aspect-[2/1] z-10 pointer-events-none"
         >
           <svg viewBox="0 0 200 100" preserveAspectRatio="xMidYMax meet" className="w-full h-full">
             <path d="M0,100 A100,100 0 0 1 200,100 L200,100 L0,100 Z" fill="#fbbf24" />
@@ -75,14 +75,14 @@ function HeroVisual() {
         </div>
 
         {/* Cutout image */}
-        <div className="absolute inset-0 z-30 translate-y-6 sm:translate-y-8 lg:translate-y-10">
+        <div className="absolute inset-0 p-4 z-30">
           <div className="relative h-full w-full">
             <Image
               src={profile.image || "/images/hero-portrait.svg"}
               alt={profile.alt || "Portrait"}
               fill
               priority
-              className="object-contain object-bottom origin-bottom scale-[1.18] sm:scale-[1.22] lg:scale-[1.28] [background:transparent!important]"
+              className="object-contain [background:transparent!important]"
               sizes="(min-width: 1024px) 520px, 90vw"
             />
           </div>
@@ -115,7 +115,7 @@ export default function Hero() {
     <section id="home" className="relative overflow-hidden">
       {/* Removed ambient blob halos from the background */}
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 sm:pt-16 pb-0">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-0 sm:pt-2 pb-0">
         {/* Desktop layout: center visual; position quote absolutely on the left */}
         <div className="relative hidden lg:block">
           <HeroVisual />
