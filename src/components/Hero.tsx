@@ -42,7 +42,7 @@ function HeroVisual() {
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7, delay: 0.05 }}
-        className="relative mx-auto h-[380px] sm:h-[480px] lg:h-[540px] w-full max-w-[480px]"
+        className="relative mx-auto h-[520px] sm:h-[640px] lg:h-[720px] w-full max-w-[620px] sm:max-w-[720px] lg:max-w-[820px]"
       >
         {/* Background headline behind cutout (two lines like Jenny) */}
         <motion.div
@@ -75,14 +75,14 @@ function HeroVisual() {
         </div>
 
         {/* Cutout image */}
-        <div className="absolute inset-0 p-4 z-30">
+        <div className="absolute inset-0 z-30 translate-y-6 sm:translate-y-8 lg:translate-y-10">
           <div className="relative h-full w-full">
             <Image
               src={profile.image || "/images/hero-portrait.svg"}
               alt={profile.alt || "Portrait"}
               fill
               priority
-              className="object-contain [background:transparent!important]"
+              className="object-contain object-bottom origin-bottom scale-[1.18] sm:scale-[1.22] lg:scale-[1.28] [background:transparent!important]"
               sizes="(min-width: 1024px) 520px, 90vw"
             />
           </div>
