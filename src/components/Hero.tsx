@@ -58,14 +58,21 @@ function HeroVisual() {
            * - mix-blend-difference with white text auto-inverts on light bg
            *   so the headline stays visible in light mode too.
            */
-          className="pointer-events-none select-none absolute top-[6%] left-1/2 -translate-x-1/2 z-20 text-center font-extrabold tracking-tight text-white opacity-100 mix-blend-difference leading-[0.92] w-auto flex flex-col items-center gap-1"
+          className="pointer-events-none select-none absolute top-[6%] left-1/2 -translate-x-1/2 z-20 text-center font-extrabold tracking-tight text-zinc-900 dark:text-white opacity-100 leading-[0.92] w-auto flex flex-col items-center gap-1"
         >
           <span className="block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap">I’m Archit,</span>
           <span className="block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap">Data Scientist</span>
         </motion.div>
 
-        {/* Removed soft orange arc/halo behind cutout */}
-        {/* (intentionally left blank) */}
+        {/* Orange arc behind the hero (true semicircle via SVG; keeps perfect 2:1 ratio) */}
+        <div
+          aria-hidden
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[120%] sm:w-[135%] lg:w-[150%] aspect-[2/1] z-10 pointer-events-none"
+        >
+          <svg viewBox="0 0 200 100" preserveAspectRatio="xMidYMax meet" className="w-full h-full">
+            <path d="M0,100 A100,100 0 0 1 200,100 L200,100 L0,100 Z" fill="#fbbf24" />
+          </svg>
+        </div>
 
         {/* Cutout image */}
         <div className="absolute inset-0 p-4 z-30">
