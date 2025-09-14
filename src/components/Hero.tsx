@@ -79,24 +79,24 @@ function HeroVisual() {
             />
           </div>
         </div>
-      </motion.div>
 
-      {/* Buttons centered under the cutout */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.15 }}
-        className="mt-4 -translate-y-2 flex flex-col sm:flex-row items-center justify-center gap-3 z-[3] relative"
-      >
-        <Link href="/projects" className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background">
-          View Projects
-        </Link>
-        <a
-          href="#skills"
-          className="rounded-full px-5 py-3 font-medium ring-1 ring-zinc-300/70 dark:ring-white/15 bg-white/70 dark:bg-white/5 hover:bg-white/90 dark:hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        {/* CTA buttons over the arc, centered near bottom */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="absolute left-1/2 -translate-x-1/2 bottom-16 sm:bottom-20 lg:bottom-16 z-40 flex flex-col sm:flex-row items-center justify-center gap-3"
         >
-          Skills & Resume
-        </a>
+          <Link href="/projects" className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background">
+            View Projects
+          </Link>
+          <a
+            href="#skills"
+            className="rounded-full px-5 py-3 font-medium ring-1 ring-zinc-300/70 dark:ring-white/15 bg-white/70 dark:bg-white/5 hover:bg-white/90 dark:hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            Skills & Resume
+          </a>
+        </motion.div>
       </motion.div>
     </div>
   );
