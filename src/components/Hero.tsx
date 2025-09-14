@@ -23,7 +23,7 @@ function QuoteBlock() {
         aria-hidden
         className="absolute -left-3 -top-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-600 ring-1 ring-orange-500/20"
       >
-        <span className="text-2xl leading-none">“</span>
+        <span className="text-9xl leading-none">“</span>
       </span>
       <p className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-white">
         I build intelligent products with LLMs and data.
@@ -105,11 +105,11 @@ function HeroVisual() {
 export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-0 sm:pt-2 pb-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-0 sm:pt-2 pb-0">
         {/* Desktop layout: center visual; position quote absolutely on the left */}
         <div className="relative hidden lg:block">
           <HeroVisual />
-          <div className="absolute left-0 top-8">
+          <div className="absolute left-0 top-40">
             <QuoteBlock />
           </div>
         </div>
