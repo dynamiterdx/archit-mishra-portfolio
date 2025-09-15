@@ -104,7 +104,7 @@ function HeroVisual() {
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden">
+    <section id="home" className="relative isolate overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-0 sm:pt-2 pb-0">
         {/* Desktop layout: center visual; position quote absolutely on the left */}
         <div className="relative hidden lg:block">
