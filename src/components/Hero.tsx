@@ -42,7 +42,7 @@ function HeroVisual() {
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7, delay: 0.05 }}
-        className="relative mx-auto -mt-10 sm:-mt-14 lg:-mt-16 h-[570px] sm:h-[720px] lg:h-[620px] w-full max-w-[720px]"
+        className="relative mx-auto -mt-10 sm:-mt-14 lg:-mt-16 h-[588px] sm:h-[739px] lg:h-[640px] w-full max-w-[720px]"
       >
         {/* Background headline behind cutout (two lines like Jenny) */}
         <motion.div
@@ -59,7 +59,7 @@ function HeroVisual() {
         {/* Orange arc behind the hero */}
         <div
           aria-hidden
-          className="absolute bottom-2 sm:bottom-3 lg:bottom-4 left-1/2 -translate-x-1/2 w-[576px] sm:w-[648px] lg:w-[720px] aspect-[2/1] z-10 pointer-events-none"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[576px] sm:w-[648px] lg:w-[720px] aspect-[2/1] z-10 pointer-events-none"
         >
           <svg viewBox="0 0 200 100" preserveAspectRatio="xMidYMax meet" className="w-full h-full">
             <path d="M0,100 A100,100 0 0 1 200,100 L200,100 L0,100 Z" fill="#fbbf24" />
@@ -67,7 +67,7 @@ function HeroVisual() {
         </div>
 
         {/* Cutout image — centered with arc */}
-        <div className="absolute top-0 left-1/2 -translate-x-[60%] z-30 w-[576px] sm:w-[648px] lg:w-[720px] h-full p-4">
+        <div className="absolute top-0 left-1/2 -translate-x-[60%] z-30 w-[576px] sm:w-[648px] lg:w-[720px] h-full pt-4 px-4 pb-0">
           <div className="relative h-full w-full">
             <Image
               src={profile.image || "/images/hero-portrait.svg"}
