@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -84,7 +85,7 @@ export default function Navbar() {
             {/* Center logo */}
             <li className="pointer-events-none select-none">
               <div className="flex items-center gap-2 py-2 px-4">
-                <img src="/logo-mark.svg" alt="logo" className="h-7 w-7" />
+                <Image src="/logo-mark.svg" alt="logo" width={28} height={28} className="h-7 w-7" />
                 <span className="font-semibold tracking-wide">GENAI</span>
               </div>
             </li>

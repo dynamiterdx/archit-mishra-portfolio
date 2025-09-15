@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FaGithub, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa6";
 
 export default function ConnectBanner() {
@@ -17,7 +18,7 @@ export default function ConnectBanner() {
           <div className="grid gap-10 md:grid-cols-2">
             <div>
               <div className="flex items-center gap-3">
-                <img src="/logo-mark.svg" alt="logo" className="h-8 w-8" />
+                <Image src="/logo-mark.svg" alt="logo" width={32} height={32} className="h-8 w-8" />
                 <span className="font-semibold">GENAI</span>
               </div>
               <p className="mt-3 text-sm text-zinc-300 max-w-prose">

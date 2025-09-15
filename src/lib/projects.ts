@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 // Compile MDX only when needed to keep homepage lightweight in dev
 import { mdxComponents } from '@/components/mdx-components';
+import type { Pluggable } from 'unified';
 
 export type ProjectMeta = {
   slug: string;
@@ -85,8 +86,8 @@ export async function getProjectBySlug(slugParam: string): Promise<ProjectConten
   const source = await fs.readFile(full, 'utf8');
 
   const { compileMDX } = await import('next-mdx-remote/rsc');
-  const remarkGfm = (await import('remark-gfm')).default as any;
-  const rehypeSlug = (await import('rehype-slug')).default as any;
+  const remarkGfm = (await import('remark-gfm')).default as unknown as Pluggable;
+  const rehypeSlug = (await import('rehype-slug')).default as unknown as Pluggable;
 
   const { content, frontmatter } = await compileMDX<ProjectMeta>({
     source,
