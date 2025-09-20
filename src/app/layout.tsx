@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "GenAI Data Scientist · Portfolio",
   description:
     "Portfolio of a GenAI-focused data scientist: projects, demos and photography.",
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("http://archit-mishra.vercel.app"),
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
