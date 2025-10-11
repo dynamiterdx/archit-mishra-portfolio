@@ -52,16 +52,15 @@ function HeroVisual() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="pointer-events-none select-none absolute top-[27%] left-1/2 -translate-x-1/2 
                      z-20 text-center font-extrabold tracking-tight leading-[0.92]
-                     mix-blend-normal w-auto"
+                     mix-blend-normal w-auto text-zinc-900 dark:text-white"
         >
-          <span className="block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap text-black dark:text-white">
+          <span className="hero-headline block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap">
             I’m Archit,
           </span>
-          <span className="block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap text-black dark:text-white">
+          <span className="hero-headline block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap">
             Data Scientist
           </span>
         </motion.div>
-
         {/* Orange arc behind the hero */}
         <div
           aria-hidden

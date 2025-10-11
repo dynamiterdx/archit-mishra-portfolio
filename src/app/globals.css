@@ -24,6 +24,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.hero-headline {
+  color: #171717;
+}
+
+html.dark .hero-headline {
+  color: #ffffff;
+}
+
 /* Accent utilities and helpers */
 .btn-primary { @apply rounded-full bg-orange-600 text-white px-5 py-3 font-medium hover:bg-orange-700; }
 .section { @apply py-12 sm:py-16; }
