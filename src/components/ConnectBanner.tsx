@@ -52,7 +52,7 @@ export default function ConnectBanner() {
             <div>
               <div className="text-orange-400 font-semibold">Contact</div>
               <ul className="mt-2 space-y-1 text-zinc-300 text-sm">
-                <li>Bengaluru, India (working with global audit teams)</li>
+                <li>Bengaluru, India</li>
                 <li>
                   <a href="tel:+919161251999" className="hover:text-white">+91 9161251999</a>
                 </li>
