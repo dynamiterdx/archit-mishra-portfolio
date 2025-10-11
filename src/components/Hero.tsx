@@ -100,7 +100,7 @@ function HeroVisual() {
           </Link>
           <a
             href="#skills"
-            className="rounded-full px-5 py-3 font-medium ring-1 ring-zinc-300/70 dark:ring-white/15 bg-white/70 dark:bg-white/5 hover:bg-white/90 dark:hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="rounded-full px-5 py-3 font-medium text-zinc-900 dark:text-zinc-900 ring-1 ring-zinc-300/70 dark:ring-white/15 bg-white dark:bg-white transition-colors hover:bg-zinc-100 dark:hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             Skills & Resume
           </a>

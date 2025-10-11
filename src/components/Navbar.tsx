@@ -58,7 +58,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-4 z-50">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <nav className="relative rounded-full bg-black/85 text-white backdrop-blur-xl ring-1 ring-white/5 shadow-2xl">
+        <nav className="navbar-surface relative rounded-full text-white backdrop-blur-xl ring-1 ring-white/10 shadow-2xl">
           <ul className="flex items-center justify-between px-3">
             {/* Left cluster */}
             <div className="flex items-center">
