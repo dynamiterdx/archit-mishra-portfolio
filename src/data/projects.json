@@ -1,24 +1,25 @@
 [
   {
-    "title": "RAG Starter",
-    "description": "Modular Retrieval-Augmented Generation stack with embeddings, vector DB, and reranking.",
-    "repo": "https://github.com/yourname/rag-starter",
-    "demoUrl": "https://example.com/demo",
-    "tags": ["LLM", "RAG", "TypeScript"],
+    "title": "Agentic Research Notebook",
+    "description": "Local-first LangGraph notebook for digesting papers with explainable agent flows.",
+    "repo": "https://github.com/architmishrapro/agentic-research-notebook",
+    "demoUrl": "https://research-notebook-demo.vercel.app",
+    "tags": ["LangGraph", "Next.js", "SQLite"],
     "cover": "/images/prj-1.svg"
   },
   {
-    "title": "Agentic Workflows",
-    "description": "Composable multi-tool agents with memory and task orchestration.",
-    "repo": "https://github.com/yourname/agentic-workflows",
-    "tags": ["Agents", "Planning", "Python"],
+    "title": "PromptOps Lab",
+    "description": "Open-source CLI + dashboard to regression-test prompts, guardrails, and agent flows.",
+    "repo": "https://github.com/architmishrapro/prompt-ops-lab",
+    "tags": ["Evaluations", "TypeScript", "CLI"],
     "cover": "/images/prj-2.svg"
   },
   {
-    "title": "Vision QA",
-    "description": "Grounded visual question answering using CLIP and LLM reasoning.",
-    "repo": "https://github.com/yourname/vision-qa",
-    "tags": ["Vision", "Multimodal"],
+    "title": "Lens to Language",
+    "description": "Photography storytelling pipeline that pairs visuals with LLM-written narratives and audio.",
+    "repo": "https://github.com/architmishrapro/lens-to-language",
+    "demoUrl": "https://lens-to-language.vercel.app",
+    "tags": ["Photography", "Creative", "LLM"],
     "cover": "/images/prj-3.svg"
   }
 ]

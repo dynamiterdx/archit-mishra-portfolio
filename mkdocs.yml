@@ -1,0 +1,9 @@
+site_name: Personal Portfolio Docs
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Architecture Tour: architecture.md
+  - Content Management: content.md
+  - Customization Playbook: customization.md
+theme:
+  name: material

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaGithub, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa6";
+import { FaEnvelope, FaLinkedin, FaPhone } from "react-icons/fa6";
 
 export default function ConnectBanner() {
   return (
@@ -9,8 +9,13 @@ export default function ConnectBanner() {
       <div className="bg-zinc-900 text-white rounded-t-[36px] footer-fade-in">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12">
           <div className="flex items-center justify-between gap-6">
-            <h2 className="text-3xl sm:text-4xl font-extrabold">Lets Connect there</h2>
-            <Link href="/contact" className="rounded-full bg-orange-600 text-white px-5 py-3 font-semibold hover:bg-orange-700">Hire me →</Link>
+            <h2 className="text-3xl sm:text-4xl font-extrabold">Let&apos;s build audit-grade GenAI</h2>
+            <Link
+              href="mailto:architmishrapro@gmail.com"
+              className="rounded-full bg-orange-600 text-white px-5 py-3 font-semibold hover:bg-orange-700"
+            >
+              Send an email →
+            </Link>
           </div>
 
           <div className="my-8 border-t border-white/10" />
@@ -22,19 +27,32 @@ export default function ConnectBanner() {
                 <span className="font-semibold">GENAI</span>
               </div>
               <p className="mt-3 text-sm text-zinc-300 max-w-prose">
-                I design and build intelligent, production‑ready experiences powered by LLMs and great data.
+                I design and ship agentic copilots that auditors can trust - balancing governance, accuracy, and fast iteration
+                across 130 markets. If you&apos;re wrestling with compliance or risk guardrails, let&apos;s chat.
               </p>
               <div className="mt-4 flex items-center gap-4 text-white/80">
-                <a href="#" aria-label="GitHub" className="hover:text-white"><FaGithub /></a>
-                <a href="#" aria-label="LinkedIn" className="hover:text-white"><FaLinkedin /></a>
-                <a href="#" aria-label="YouTube" className="hover:text-white"><FaYoutube /></a>
-                <a href="#" aria-label="Twitter" className="hover:text-white"><FaTwitter /></a>
+                <a href="mailto:architmishrapro@gmail.com" aria-label="Email Archit" className="hover:text-white">
+                  <FaEnvelope />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/marchit/"
+                  aria-label="LinkedIn"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-white"
+                >
+                  <FaLinkedin />
+                </a>
+                <a href="tel:+919161251999" aria-label="Call Archit" className="hover:text-white">
+                  <FaPhone />
+                </a>
               </div>
             </div>
 
             <div>
               <div className="text-orange-400 font-semibold">Contact</div>
               <ul className="mt-2 space-y-1 text-zinc-300 text-sm">
+                <li>Bengaluru, India (working with global audit teams)</li>
                 <li>
                   <a href="tel:+919161251999" className="hover:text-white">+91 9161251999</a>
                 </li>

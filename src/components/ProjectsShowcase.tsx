@@ -58,7 +58,7 @@ export default function ProjectsShowcase({ projects }: Props) {
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
               <h2 className="text-3xl font-extrabold">My <span className="text-orange-500">Projects</span></h2>
               <p className="max-w-xl text-sm text-white/70">
-                A rotating selection of GenAI/Data Science projects. Click the arrow on any tile to view the repo, or see all on the Projects page.
+                Side projects where I tinker with LangGraph agents, evaluation tooling, and storytelling pipelines outside of client work.
               </p>
             </div>
           </div>

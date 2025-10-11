@@ -44,16 +44,22 @@ function HeroVisual() {
         transition={{ duration: 0.7, delay: 0.05 }}
         className="relative mx-auto -mt-10 sm:-mt-14 lg:-mt-16 h-[588px] sm:h-[739px] lg:h-[640px] w-full max-w-[720px]"
       >
-        {/* Background headline behind cutout (two lines like Jenny) */}
+        {/* Headline behind the cutout, in front of the arc */}
         <motion.div
           aria-hidden
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="pointer-events-none select-none absolute top-[27%] left-1/2 -translate-x-1/2 z-20 text-center font-extrabold tracking-tight text-zinc-900 dark:text-white opacity-100 leading-[0.92] w-auto flex flex-col items-center gap-1"
+          className="pointer-events-none select-none absolute top-[27%] left-1/2 -translate-x-1/2 
+                     z-20 text-center font-extrabold tracking-tight leading-[0.92]
+                     mix-blend-normal w-auto"
         >
-          <span className="block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap">I’m Archit,</span>
-          <span className="block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap">Data Scientist</span>
+          <span className="block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap text-black dark:text-white">
+            I’m Archit,
+          </span>
+          <span className="block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap text-black dark:text-white">
+            Data Scientist
+          </span>
         </motion.div>
 
         {/* Orange arc behind the hero */}
@@ -66,7 +72,7 @@ function HeroVisual() {
           </svg>
         </div>
 
-        {/* Cutout image — centered with arc */}
+        {/* Cutout image - centered with arc */}
         <div className="absolute top-0 left-1/2 -translate-x-[60%] z-30 w-[576px] sm:w-[648px] lg:w-[720px] h-full pt-4 px-4 pb-0">
           <div className="relative h-full w-full">
             <Image
@@ -87,7 +93,10 @@ function HeroVisual() {
           transition={{ duration: 0.5, delay: 0.15 }}
           className="absolute left-1/2 -translate-x-1/2 bottom-16 sm:bottom-20 lg:bottom-16 z-40 flex flex-col sm:flex-row items-center justify-center gap-3"
         >
-          <Link href="/projects" className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background">
+          <Link
+            href="/projects"
+            className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
             View Projects
           </Link>
           <a
@@ -106,7 +115,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative isolate overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-0 sm:pt-2 pb-0">
-        {/* Desktop layout: center visual; position quote absolutely on the left */}
+        {/* Desktop layout */}
         <div className="relative hidden lg:block">
           <HeroVisual />
           <div className="absolute left-0 top-40">
@@ -114,7 +123,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Mobile/Tablet: stack quote then visual */}
+        {/* Mobile/Tablet */}
         <div className="lg:hidden space-y-8">
           <div className="mx-auto max-w-[360px] pt-4">
             <QuoteBlock />
