@@ -48,7 +48,7 @@ function HeroVisual() {
           initial={{ opacity: 0, y: -6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.05 }}
-          className="absolute left-1/2 -translate-x-1/2 top-[13%] z-30"
+          className="absolute left-1/2 -translate-x-1/2 top-[18%] z-30"
         >
           <div className="relative inline-flex">
             <span className="rounded-full border border-zinc-300 bg-white px-5 py-1.5 text-sm font-semibold text-zinc-900 shadow-sm dark:border-white/40 dark:bg-white dark:text-zinc-900">
