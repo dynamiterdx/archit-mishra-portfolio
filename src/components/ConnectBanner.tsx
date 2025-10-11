@@ -5,14 +5,14 @@ import { HiArrowUpRight } from "react-icons/hi2";
 
 export default function ConnectBanner() {
   return (
-    <section className="mt-16">
+    <section id="contact" className="mt-16">
       {/* Full-bleed dark block that hugs screen edges */}
       <div className="bg-zinc-900 text-white rounded-t-[36px] footer-fade-in">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12">
           <div className="flex items-center justify-between gap-6">
             <h2 className="text-3xl sm:text-4xl font-extrabold">Let&apos;s build audit-grade GenAI</h2>
             <Link
-              href="mailto:architmishrapro@gmail.com"
+              href="mailto:architmishrapro@gmail.com?subject=Say%20hello%20to%20Archit&body=Hi%20Archit%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20wanted%20to%20connect%20about..."
               className="group inline-flex items-center gap-2 rounded-full bg-white text-zinc-900 px-5 py-3 font-semibold shadow-sm transition hover:bg-zinc-200"
             >
               <span>Get in Touch</span>

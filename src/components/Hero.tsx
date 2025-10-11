@@ -44,6 +44,29 @@ function HeroVisual() {
         transition={{ duration: 0.7, delay: 0.05 }}
         className="relative mx-auto -mt-10 sm:-mt-14 lg:-mt-16 h-[588px] sm:h-[739px] lg:h-[640px] w-full max-w-[720px]"
       >
+        <motion.div
+          initial={{ opacity: 0, y: -6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+          className="absolute left-1/2 -translate-x-1/2 top-[13%] z-30"
+        >
+          <div className="relative inline-flex">
+            <span className="rounded-full border border-zinc-300 bg-white px-5 py-1.5 text-sm font-semibold text-zinc-900 shadow-sm dark:border-white/40 dark:bg-white dark:text-zinc-900">
+              Hello!
+            </span>
+            <svg
+              className="absolute -top-4 right-1 h-6 w-6 text-orange-400"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            >
+              <path d="M6 20c4-6.5 7.5-7.5 12-12" />
+              <path d="M10 22c2.5-3.5 5-5.5 9-9" />
+            </svg>
+          </div>
+        </motion.div>
         {/* Headline behind the cutout, in front of the arc */}
         <motion.div
           aria-hidden

@@ -12,7 +12,7 @@ const navItems = [
   { href: "/#resume", label: "Resume" },
   { href: "/projects", label: "Project" },
   { href: "/photography", label: "Photography" },
-  { href: "/contact", label: "Contact" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -24,7 +24,7 @@ export default function Navbar() {
   useEffect(() => {
     if (pathname !== "/") return; // Only run scroll spy on home page
 
-    const ids = ["home", "skills", "resume", "services"]; // sections that exist
+    const ids = ["home", "skills", "resume", "services", "contact"]; // sections that exist
     const elements = ids
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el));
