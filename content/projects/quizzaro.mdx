@@ -1,0 +1,41 @@
+---
+title: Quizzaro
+subtitle: GenAI quiz coach that adapts to any topic
+summary: Instant quizzes, adaptive drills, and detailed explanations powered by Azure OpenAI to help learners improve faster.
+tags: [GenAI, Next.js, Azure, Education]
+cover: /images/quizzaro-home.png
+demoUrl: https://archits-quiz-app.vercel.app/
+featured: true
+order: 28
+date: 2024-11-05
+---
+
+## Why I built it
+
+People asked me for “one more mock test” way too often. They needed something faster than authoring a Google Form, smarter than rote flashcards, and private enough to run from a browser tab. **Quizzaro** became that sidekick: paste any topic, pick a difficulty, and the app spins up a fresh multiple-choice quiz with explanations, grading, and targeted follow-ups.
+
+## Experience walkthrough
+
+- **Hello, Targeted Quiz** &mdash; learners describe the concept they want to drill (e.g., “Binomial theorem at JEE Advanced difficulty”). Quizzaro calls Azure OpenAI with a JSON-schema prompt, generates questions + distractors, and auto-grades with reasoning. Missed an item? Hit _Practice similar to missed_ and it loops in variations focused on the weak spots.
+- **Help me prepare** &mdash; coaches set a broader goal. The agent maps subtopics, runs a diagnostic quiz, clusters gaps, then suggests a drill plan with progress nudges.
+- **Zero friction** &mdash; no signup, all state stays in the session, keyboard navigation everywhere, and graceful fallbacks if the LLM is momentarily rate-limited.
+
+![Quizzaro home screen with mode selector](/images/quizzaro-home.png)
+
+## Under the hood
+
+- **Stack**: Next.js App Router + TypeScript, client components for fast quiz flow, Tailwind-esque utility styles for responsiveness.
+- **LLM contract**: Azure OpenAI `gpt-4o-mini` with `response_format=json_schema`, validated through Zod so malformed answers never reach the UI.
+- **Adaptive engine**: wrong answers feed into a micro state machine that chooses the next prompt template, keeps difficulty balanced, and avoids repeating identical questions.
+- **Safety rails**: guardrail prompt blocks for toxicity, retry with lower temperature, and friendly error banners if Azure rate limits the request.
+- **Accessibility**: semantic regions, ARIA-labelled radios, high-contrast themes, and support for Markdown + LaTeX so math-heavy questions render cleanly.
+
+![Grading view showing explanations and follow-up action](/images/quizzaro-quiz.png)
+
+## What it taught me
+
+- Designing **prompt ops** workflows is as important as building UI. I created a CLI harness to regression-test new prompts before shipping them.
+- Lean telemetry (time to generate, retry counts, accuracy improvements) helps spot when the model drifts or when topics need different scaffolding.
+- Speed matters: caching Azure embeddings + tightening payloads brought quiz generation under three seconds for most topics.
+
+Curious to try it? Launch the live demo here: [archits-quiz-app.vercel.app](https://archits-quiz-app.vercel.app/).
