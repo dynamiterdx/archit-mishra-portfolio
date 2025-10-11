@@ -50,9 +50,7 @@ function HeroVisual() {
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="pointer-events-none select-none absolute top-[27%] left-1/2 -translate-x-1/2 
-                     z-20 text-center font-extrabold tracking-tight leading-[0.92]
-                     mix-blend-normal w-auto"
+          className="pointer-events-none select-none absolute top-[27%] left-1/2 -translate-x-1/2 z-20 text-center font-extrabold tracking-tight text-zinc-900 dark:text-white opacity-100 leading-[0.92] w-auto flex flex-col items-center gap-1"
         >
           <span className="block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap text-black dark:text-white">
             I’m Archit,
