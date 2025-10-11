@@ -1,6 +1,7 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { FaEnvelope, FaLinkedin, FaPhone } from "react-icons/fa6";
+import { HiArrowUpRight } from "react-icons/hi2";
 
 export default function ConnectBanner() {
   return (
@@ -12,9 +13,12 @@ export default function ConnectBanner() {
             <h2 className="text-3xl sm:text-4xl font-extrabold">Let&apos;s build audit-grade GenAI</h2>
             <Link
               href="mailto:architmishrapro@gmail.com"
-              className="rounded-full bg-orange-600 text-white px-5 py-3 font-semibold hover:bg-orange-700"
+              className="group inline-flex items-center gap-2 rounded-full bg-white text-zinc-900 px-5 py-3 font-semibold shadow-sm transition hover:bg-zinc-200"
             >
-              Send an email →
+              <span>Get in Touch</span>
+              <span className="grid h-6 w-6 place-items-center rounded-full bg-orange-500 text-white transition group-hover:bg-orange-400">
+                <HiArrowUpRight />
+              </span>
             </Link>
           </div>
 
