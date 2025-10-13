@@ -31,7 +31,7 @@ export default function ConnectBanner() {
                 <span className="font-semibold">GENAI</span>
               </div>
               <p className="mt-3 text-sm text-zinc-300 max-w-prose">
-                I design and ship agentic copilots that auditors can trust - balancing governance, accuracy, and fast iteration
+                I design and ship agentic copilots that users can trust - balancing governance, accuracy, and fast iteration
                 across 130 markets. If you&apos;re wrestling with compliance or risk guardrails, let&apos;s chat.
               </p>
               <div className="mt-4 flex items-center gap-4 text-white/80">

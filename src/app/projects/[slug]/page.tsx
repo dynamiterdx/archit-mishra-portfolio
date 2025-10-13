@@ -14,22 +14,28 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
   if (!project) return notFound();
 
   return (
-    <div className="py-12 sm:py-16">
+    <div className="py-10 sm:py-14">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <Link href="/projects" className="text-sm text-zinc-600 hover:text-zinc-800">← Back to Projects</Link>
-
-        {/* Header block */}
-        <div className="mt-6 rounded-3xl bg-zinc-900 text-white ring-1 ring-white/10 px-6 py-6 sm:px-8 sm:py-8">
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">{project.title}</h1>
-          {project.subtitle && (
-            <p className="mt-2 text-white/70 max-w-2xl">{project.subtitle}</p>
-          )}
-        </div>
-
         {/* Hero layout */}
-        <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1.6fr)_minmax(280px,0.8fr)]">
+        <div className="mt-4 grid gap-6 lg:grid-cols-[minmax(0,1.6fr)_minmax(280px,0.8fr)]">
           {/* Main visual */}
           <div className="relative rounded-3xl overflow-hidden ring-1 ring-zinc-200 bg-zinc-50">
+            <div className="absolute inset-x-0 top-0 bg-gradient-to-b from-black/85 via-black/60 to-transparent">
+              <div className="px-5 pt-4 pb-6 sm:px-7 sm:pt-5 sm:pb-10 space-y-1.5">
+                <div className="text-sm font-semibold uppercase tracking-wide text-white/70">Case study</div>
+                <h1 className="text-2xl sm:text-3xl font-bold text-white">{project.title}</h1>
+                {project.subtitle && (
+                  <p className="text-sm sm:text-base text-white/70 max-w-2xl">{project.subtitle}</p>
+                )}
+              </div>
+            </div>
+            <Link
+              href="/projects"
+              className="absolute left-5 bottom-5 z-10 inline-flex items-center gap-2 rounded-full bg-white/85 px-4 py-2 text-xs font-medium text-zinc-800 ring-1 ring-white/40 hover:bg-white"
+            >
+              <span aria-hidden>←</span>
+              Back to Projects
+            </Link>
             {project.demoUrl ? (
               <iframe src={project.demoUrl} className="absolute inset-0 h-full w-full" title={`${project.title} demo`} />
             ) : project.cover ? (
@@ -41,7 +47,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               <Link
                 href={project.demoUrl}
                 target="_blank"
-                className="absolute bottom-6 right-6 inline-flex items-center gap-2 rounded-full bg-orange-600 text-white px-5 py-3 font-semibold shadow-lg hover:bg-orange-500"
+                className="absolute bottom-5 right-5 inline-flex items-center gap-2 rounded-full bg-orange-600 text-white px-5 py-3 font-semibold shadow-lg hover:bg-orange-500"
               >
                 <span>Live demo</span>
                 <span aria-hidden>→</span>
@@ -50,9 +56,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
 
           {/* Right: Quick snapshot */}
-          <div className="space-y-5">
+          <div className="space-y-5 pt-0 lg:pt-0">
             <div className="rounded-2xl ring-1 ring-zinc-200 bg-white p-5 shadow-sm">
-            <h2 className="text-xl font-semibold">Project snapshot</h2>
+            <h2 className="text-lg font-semibold uppercase tracking-wide text-zinc-500">Project Snapshot</h2>
             {project.summary && (
               <p className="mt-3 text-zinc-700 leading-relaxed">{project.summary}</p>
             )}
@@ -74,7 +80,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </div>
 
             <div className="rounded-2xl ring-1 ring-zinc-200 bg-white p-5 shadow-sm">
-              <h3 className="text-sm font-semibold text-zinc-500 uppercase tracking-wide">Skills flexed</h3>
+              <h3 className="text-lg font-semibold uppercase tracking-wide text-zinc-500">Skills Flexed</h3>
               <ul className="mt-3 space-y-2 text-sm text-zinc-600">
                 <li>Azure OpenAI prompt engineering with JSON schema responses</li>
                 <li>Next.js 15 App Router UI + accessibility-first interactions</li>
@@ -84,12 +90,13 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </div>
           </div>
 
-          {/* Full-width detail */}
-          <div className="lg:col-span-3 rounded-2xl ring-1 ring-zinc-200 bg-white shadow-sm">
-            <div className="p-6 sm:p-8 lg:p-10">
-              <div className="prose prose-zinc max-w-5xl">
-                {project.content}
-              </div>
+        </div>
+
+        {/* Full-width detail */}
+        <div className="mt-5 rounded-2xl ring-1 ring-zinc-200 bg-white shadow-sm">
+          <div className="px-4 py-5 sm:px-6 sm:py-6 lg:px-8">
+            <div className="prose prose-zinc max-w-5xl [&>*:first-child]:mt-0">
+              {project.content}
             </div>
           </div>
         </div>
