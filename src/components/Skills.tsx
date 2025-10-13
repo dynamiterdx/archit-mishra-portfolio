@@ -14,13 +14,35 @@ import {
 type Skill = { name: string; level: number; Icon: IconType };
 
 const skills: Skill[] = [
-  { name: "LangChain & LangGraph", level: 92, Icon: SiOpenai },
-  { name: "Python & Flask APIs", level: 96, Icon: SiPython },
-  { name: "Azure OpenAI & Cognitive Services", level: 90, Icon: FaCloud },
-  { name: "Airflow · Databricks Pipelines", level: 85, Icon: SiApacheairflow },
-  { name: "Power BI & Power Platform", level: 82, Icon: FaChartSimple },
-  { name: "Azure DevOps & CI/CD", level: 80, Icon: FaGears },
+  { name: "LangChain · LangGraph · Prompt Ops", level: 5, Icon: FaRegCompass },
+  { name: "Azure OpenAI · Hugging Face · Vector DBs", level: 4, Icon: FaCloud },
+  { name: "Python · Flask · Next.js", level: 5, Icon: SiPython },
+  { name: "PyTorch · Keras · TensorFlow", level: 4, Icon: FaVial },
+  { name: "Airflow · Databricks · PySpark", level: 4, Icon: SiApacheairflow },
+  { name: "Azure DevOps · Docker · CI/CD", level: 3, Icon: FaGears },
+  { name: "Power BI · Power Platform · Azure Analysis", level: 3, Icon: FaChartSimple },
 ];
+
+function SkillMeter({ level }: { level: number }) {
+  const totalSegments = 5;
+  const activeSegments = Math.min(Math.max(level, 0), totalSegments);
+  const palette = ["bg-orange-500", "bg-orange-400", "bg-orange-300", "bg-orange-200", "bg-orange-100"];
+
+  return (
+    <div className="flex gap-2">
+      {Array.from({ length: totalSegments }).map((_, idx) => {
+        const isActive = idx < activeSegments;
+        const color = isActive ? palette[idx] : "bg-zinc-700";
+        return (
+          <div
+            key={idx}
+            className={`h-2.5 flex-1 rounded-full transition-colors ${color}`}
+          />
+        );
+      })}
+    </div>
+  );
+}
 
 type SkillStory = {
   Icon: IconType;
@@ -80,17 +102,8 @@ export default function Skills() {
               <div key={s.name} className="">
                 <div className="flex items-center justify-between mb-1">
                   <div className="flex items-center gap-2"><s.Icon className="text-zinc-300" /><span className="font-medium">{s.name}</span></div>
-                  <span className="text-sm text-zinc-400">{s.level}%</span>
                 </div>
-                <div className="h-2 rounded-full bg-zinc-800 overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${s.level}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="h-full bg-orange-600"
-                  />
-                </div>
+                <SkillMeter level={s.level} />
               </div>
             ))}
           </div>

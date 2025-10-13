@@ -1,5 +1,13 @@
 [
   {
+    "title": "Quizzaro",
+    "description": "LLM-powered quiz coach that generates, grades, and adapts drills for any topic in seconds.",
+    "repo": "https://archits-quiz-app.vercel.app/",
+    "demoUrl": "https://archits-quiz-app.vercel.app/",
+    "tags": ["GenAI", "Education", "Azure"],
+    "cover": "/images/quizzaro-home.png"
+  },
+  {
     "title": "Agentic Research Notebook",
     "description": "Local-first LangGraph notebook for digesting papers with explainable agent flows.",
     "repo": "https://github.com/architmishrapro/agentic-research-notebook",

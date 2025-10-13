@@ -12,7 +12,7 @@ const navItems = [
   { href: "/#resume", label: "Resume" },
   { href: "/projects", label: "Project" },
   { href: "/photography", label: "Photography" },
-  { href: "/contact", label: "Contact" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -24,7 +24,7 @@ export default function Navbar() {
   useEffect(() => {
     if (pathname !== "/") return; // Only run scroll spy on home page
 
-    const ids = ["home", "skills", "resume", "services"]; // sections that exist
+    const ids = ["home", "skills", "resume", "services", "contact"]; // sections that exist
     const elements = ids
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el));
@@ -58,7 +58,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-4 z-50">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <nav className="relative rounded-full bg-black/85 text-white backdrop-blur-xl ring-1 ring-white/5 shadow-2xl">
+        <nav className="navbar-surface relative rounded-full text-white backdrop-blur-xl ring-1 ring-white/10 shadow-2xl">
           <ul className="flex items-center justify-between px-3">
             {/* Left cluster */}
             <div className="flex items-center">

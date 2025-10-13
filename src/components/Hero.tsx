@@ -44,22 +44,46 @@ function HeroVisual() {
         transition={{ duration: 0.7, delay: 0.05 }}
         className="relative mx-auto -mt-10 sm:-mt-14 lg:-mt-16 h-[588px] sm:h-[739px] lg:h-[640px] w-full max-w-[720px]"
       >
+        <motion.div
+          initial={{ opacity: 0, y: -6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+          className="absolute left-1/2 -translate-x-1/2 top-[18%] z-30"
+        >
+          <div className="relative inline-flex">
+            <span className="rounded-full border border-zinc-300 bg-white px-5 py-1.5 text-sm font-semibold text-zinc-900 shadow-sm dark:border-white/40 dark:bg-white dark:text-zinc-900">
+              Hello!
+            </span>
+            <svg
+              className="absolute -top-4 right-1 h-6 w-6 text-orange-400"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            >
+              <path d="M6 20c4-6.5 7.5-7.5 12-12" />
+              <path d="M10 22c2.5-3.5 5-5.5 9-9" />
+            </svg>
+          </div>
+        </motion.div>
         {/* Headline behind the cutout, in front of the arc */}
         <motion.div
           aria-hidden
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="pointer-events-none select-none absolute top-[27%] left-1/2 -translate-x-1/2 z-20 text-center font-extrabold tracking-tight text-zinc-900 dark:text-white opacity-100 leading-[0.92] w-auto flex flex-col items-center gap-1"
+          className="pointer-events-none select-none absolute top-[27%] left-1/2 -translate-x-1/2 
+                     z-20 text-center font-extrabold tracking-tight leading-[0.92]
+                     mix-blend-normal w-auto text-zinc-900 dark:text-white"
         >
-          <span className="block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap text-black dark:text-white">
+          <span className="hero-headline block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap">
             I’m Archit,
           </span>
-          <span className="block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap text-black dark:text-white">
+          <span className="hero-headline block text-[clamp(2rem,5vw,3.5rem)] whitespace-nowrap">
             Data Scientist
           </span>
         </motion.div>
-
         {/* Orange arc behind the hero */}
         <div
           aria-hidden
@@ -99,7 +123,7 @@ function HeroVisual() {
           </Link>
           <a
             href="#skills"
-            className="rounded-full px-5 py-3 font-medium ring-1 ring-zinc-300/70 dark:ring-white/15 bg-white/70 dark:bg-white/5 hover:bg-white/90 dark:hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="rounded-full px-5 py-3 font-medium text-zinc-900 dark:text-zinc-900 ring-1 ring-zinc-300/70 dark:ring-white/15 bg-white dark:bg-white transition-colors hover:bg-zinc-100 dark:hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             Skills & Resume
           </a>
