@@ -61,9 +61,7 @@ export default function GoogleDriveGallery() {
           setState({
             status: "error",
             photos: [],
-            message:
-              data.error?.message ||
-              "The Google Drive photography folder could not be loaded.",
+            message: "The photography collection could not be loaded.",
           });
           return;
         }
@@ -75,7 +73,7 @@ export default function GoogleDriveGallery() {
             : {
                 status: "empty",
                 photos: [],
-                message: "The configured Google Drive folder does not contain image files.",
+                message: "No photos are available right now.",
               }
         );
       } catch {
@@ -83,7 +81,7 @@ export default function GoogleDriveGallery() {
           setState({
             status: "error",
             photos: [],
-            message: "The Google Drive photography folder could not be loaded.",
+            message: "The photography collection could not be loaded.",
           });
         }
       }
