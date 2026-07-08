@@ -17,7 +17,7 @@ function QuoteBlock() {
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="relative max-w-[360px] rounded-2xl bg-white/70 dark:bg-white/5 ring-1 ring-zinc-200/60 dark:ring-white/10 p-5 shadow-sm backdrop-blur-sm"
+      className="relative max-w-[360px] rounded-2xl bg-white/95 dark:bg-white/5 ring-1 ring-zinc-200/80 dark:ring-white/10 p-5 shadow-sm backdrop-blur-sm"
     >
       <span
         aria-hidden
@@ -25,7 +25,7 @@ function QuoteBlock() {
       >
         <span className="text-9xl leading-none">“</span>
       </span>
-      <p className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-white">
+      <p className="text-lg sm:text-xl font-semibold text-[#111112] dark:text-white">
         I build intelligent products with LLMs and data.
       </p>
       <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
